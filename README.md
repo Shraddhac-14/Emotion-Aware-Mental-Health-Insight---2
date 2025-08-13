@@ -2,7 +2,6 @@
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-1.13-red)](https://pytorch.org/)
-[![License](https://img.shields.io/badge/License-GPLv3-green)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 This repository contains the **Text Sentiment Analysis** module, the second core component of the **Emotion-Aware Mental Health Insight System**. It complements Part 1 (Speech Emotion Recognition) by analyzing user-generated text in online communities to predict emotional tone and identify mental health trends.
 
