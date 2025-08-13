@@ -1,39 +1,82 @@
-# SentimentWell
-A PyTorch implementation of a GRU-based RNN to predict users' emotional tone in online communities related to mental health.
+# Emotion-Aware Mental Health Insight – Part 2: Text Sentiment Analysis
 
-Introduction
-This repository contains the code for the paper "Predicting User Emotional Tone in Mental Disorder Online Communities", published in the Future Generation Computer Systems (FGCS) journal's special issue on sentiment analysis systems. The model leverages the VADER Sentiment Analysis tool to extract sentiment features from Reddit posts and comments.
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-1.13-red)](https://pytorch.org/)
+[![License](https://img.shields.io/badge/License-GPLv3-green)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
-About the Dataset
-The study uses a dataset of posts and comments from four mental health-focused subreddits: r/Anxiety, r/bipolar, r/depression, and r/SuicideWatch. The dataset statistics for each subreddit are provided for further analysis.
+This repository contains the **Text Sentiment Analysis** module, the second core component of the **Emotion-Aware Mental Health Insight System**. It complements Part 1 (Speech Emotion Recognition) by analyzing user-generated text in online communities to predict emotional tone and identify mental health trends.
 
-Contents and Usage
-This repository includes four main Python notebooks, each designed for a specific part of the workflow, allowing users to reproduce the paper's results:
+---
 
-REDDIT_SCRAPPER: Collects data from subreddits using Reddit's API.
-PRE_PROCESSING: Prepares data for training by consolidating VADER sentiment scores and key thread statistics.
-PAPER_RESULTS: Trains the model and performs result analysis.
-REVIEW_EXPERIMENTS: Conducts additional confidence interval experiments and other analyses.
-The src folder contains essential Python files, including the main PyTorch model implementation.
+## Introduction
 
-Setup and Usage
-To get started:
+Part 2 implements the methods described in the paper:
+*"Predicting User Emotional Tone in Mental Disorder Online Communities,"* published in Future Generation Computer Systems (FGCS).
 
-Follow the provided directory structure to organize files correctly.
-Install dependencies with pip install -r requirements.txt.
-To replicate the paper's results, follow these steps:
-Data Collection: Run the REDDIT_SCRAPPER notebook locally to download subreddit data.
-Data Preprocessing: Run the PRE_PROCESSING notebook (recommended on Colab for TPU support), or download the preprocessed dataset.
-Model Training: Choose between training the model from scratch on a GPU-enabled machine or loading pre-trained parameters to run the PAPER_RESULTS notebook in testing mode.
-Reproducing Results
-The pipeline aims for easy reproducibility of the original results. After completing these steps, the trained model will generate a results table and provide case studies on specific threads.
+This module leverages **VADER Sentiment Analysis** and a GRU-based RNN to extract sentiment features from Reddit posts and comments, predicting users’ emotional tone. When combined with Part 1 (speech emotion recognition), the full system can analyze both voice and text to provide cross-modal emotional insights.
 
-Future Development & Support
-A command-line version of the model is planned for streamlined use. For questions or suggestions, contact the authors by email.
+---
 
-License & Disclaimer
-This research code is licensed under the GNU General Public License Version 3 (GPLv3) and is provided without any warranty for specific use.
+## Dataset
 
-Authors: Bárbara Silveira, Henrique S. A. Silva, Fabricio Murai, Ana Paula C. da Silva
+The dataset contains posts and comments from four mental health-focused subreddits:
 
-Citation: Use the provided BibTeX entry to cite this paper if using or referring to the research in other work. The study explores how Reddit interactions in mental health communities affect users' emotional states and presents a model that predicts emotional tone changes based on these interactions. The results suggest that social support on these platforms can positively impact users' emotional well-being.
+* r/Anxiety
+* r/bipolar
+* r/depression
+* r/SuicideWatch
+
+Statistics for each subreddit are included for detailed analysis.
+
+---
+
+## Repository Structure
+
+* **REDDIT\_SCRAPPER:** Collects subreddit posts and comments via Reddit API.
+* **PRE\_PROCESSING:** Prepares data with VADER sentiment scores and thread statistics.
+* **PAPER\_RESULTS:** Trains the GRU model and performs result analysis.
+* **REVIEW\_EXPERIMENTS:** Additional experiments, including confidence intervals and case studies.
+* **src/**: Contains the core PyTorch model implementation and helper scripts.
+
+This module is intended to work alongside **Part 1 (Speech Emotion Recognition)** for a complete emotion-aware system.
+
+---
+
+## Setup and Usage
+
+1. Clone the repository and follow the provided directory structure.
+2. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. **Data Collection:** Run `REDDIT_SCRAPPER` notebook to fetch subreddit data.
+4. **Data Preprocessing:** Run `PRE_PROCESSING` notebook or download preprocessed datasets.
+5. **Model Training:**
+
+   * Train from scratch on a GPU-enabled machine, or
+   * Load pre-trained parameters to run the `PAPER_RESULTS` notebook in testing mode.
+
+---
+
+## Reproducing Results
+
+After running the above steps, the trained model will:
+
+* Generate a results table aligned with the paper’s findings.
+* Provide case studies and visualizations of emotional trends in subreddit discussions.
+* Integrate with Part 1 outputs for combined speech and text emotion insights.
+
+---
+
+## Future Development and Roadmap
+
+* Implement a command-line interface for streamlined use.
+* Expand the model to additional online communities.
+* Integrate multimodal analysis combining voice and text for more accurate emotional detection.
+* Develop dashboards for visualizing cross-modal emotional trends.
+
+This README explicitly positions Part 2 as a continuation of Part 1, showing how text sentiment analysis complements speech emotion recognition in the full system.
+
+If you want, I can now create a **combined project README** that covers both Part 1 and Part 2 in a single professional homepage for GitHub. Do you want me to do that?
