@@ -78,5 +78,3 @@ After running the above steps, the trained model will:
 * Develop dashboards for visualizing cross-modal emotional trends.
 
 This README explicitly positions Part 2 as a continuation of Part 1, showing how text sentiment analysis complements speech emotion recognition in the full system.
-
-If you want, I can now create a **combined project README** that covers both Part 1 and Part 2 in a single professional homepage for GitHub. Do you want me to do that?
